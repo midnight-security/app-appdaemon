@@ -4,27 +4,14 @@ version: dev
 slug: appdaemon
 description: Python Apps and Dashboard using AppDaemon 4.x for Home Assistant
 url: https://github.com/midnight-security/app-appdaemon
-webui: http://[HOST]:[PORT:5050]
+webui: http://[HOST]:5050
 arch:
   - aarch64
   - amd64
 init: false
 homeassistant_api: true
+host_network: true
 uart: true
-ports:
-  5050/tcp: 5050
-  5051/tcp: 5051
-  5052/tcp: 5052
-  5053/tcp: 5053
-  5054/tcp: 5054
-  5055/tcp: 5055
-ports_description:
-  5050/tcp: AppDaemon
-  5051/tcp: websocket5051
-  5052/tcp: websocket5052
-  5053/tcp: websocket5053
-  5054/tcp: websocket5054
-  5055/tcp: websocket5055
 map:
   - addon_config:rw
   - homeassistant_config:rw
