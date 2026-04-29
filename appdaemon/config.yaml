@@ -17,13 +17,11 @@ uart: true
 ports:                                    # only meaningful if host_network is removed
   5050/tcp: 5060
   8080/tcp: 8080
-  1883/tcp: 1883
   9000/tcp: 9000
   5051/tcp: 5051
 ports_description:
   5050/tcp: AppDaemon admin & HADashboard
   8080/tcp: Alarm system web UI
-  1883/tcp: Alarm MQTT
   9000/tcp: Alarm sensor receiver
   5051/tcp: Radar port
 map:
