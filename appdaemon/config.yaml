@@ -15,7 +15,7 @@ auth_api: true                            # ADD: same
 # host_network: true                      # DECIDE: remove this OR remove ports: below
 uart: true
 ports:                                    # only meaningful if host_network is removed
-  5050/tcp: 5060
+  5050/tcp: 5055
   8080/tcp: 8080
   9000/tcp: 9000
   5051/tcp: 5051
