@@ -12,6 +12,19 @@ init: false
 homeassistant_api: true
 host_network: true
 uart: true
+
+ports:
+  5050/tcp: 5060        # container 5050 → host 5060 (HADashboard / admin)
+  8080/tcp: 8080        # example: alarm web UI
+  1883/tcp: 1883        # example: alarm MQTT broker
+  9000/tcp: 9000        # example: alarm sensor receiver
+  5051/tcp: 5051        # Radar port
+ports_description:
+  5050/tcp: AppDaemon admin & HADashboard
+  8080/tcp: Alarm system web UI
+  1883/tcp: Alarm MQTT
+  9000/tcp: Alarm sensor receiver
+  5051/tcp: Radar port
 map:
   - addon_config:rw
   - homeassistant_config:rw
