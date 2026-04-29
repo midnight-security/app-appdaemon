@@ -34,9 +34,16 @@ map:
   - ssl
 options:
   log_level: info                         # ADD: default for the schema entry
-  system_packages: []
-  python_packages: []
+  system_packages:
+    - py3-scikit-learn
+    - py3-numpy
+    - py3-scipy
+    - py3-joblib
+    - py3-threadpoolctl
+  python_packages:
+    - paho-mqtt
   init_commands: []
+ 
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   system_packages:
