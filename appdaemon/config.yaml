@@ -1,7 +1,7 @@
 ---
 name: AppDaemonMidnight
 version: dev                              # OK for dev; remember to "Rebuild" each iteration
-slug: appdaemon
+slug: appdaemon_midnight
 description: Python Apps and Dashboard using AppDaemon 4.x for Home Assistant
 url: https://github.com/midnight-security/app-appdaemon
 webui: http://[HOST]:[PORT:5050]          # FIX: was [PORT:5056]
