@@ -4,7 +4,7 @@ version: dev
 slug: appdaemon
 description: Python Apps and Dashboard using AppDaemon 4.x for Home Assistant
 url: https://github.com/midnight-security/app-appdaemon
-webui: http://[HOST]:5060
+webui: http://[HOST]:[PORT:5056]
 arch:
   - aarch64
   - amd64
