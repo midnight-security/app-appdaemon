@@ -1,24 +1,25 @@
 ---
 name: AppDaemonMidnight
-version: dev
+version: dev                              # OK for dev; remember to "Rebuild" each iteration
 slug: appdaemon
 description: Python Apps and Dashboard using AppDaemon 4.x for Home Assistant
 url: https://github.com/midnight-security/app-appdaemon
-webui: http://[HOST]:[PORT:5056]
+webui: http://[HOST]:[PORT:5050]          # FIX: was [PORT:5056]
 arch:
   - aarch64
   - amd64
 init: false
 homeassistant_api: true
-host_network: true
+hassio_api: true                          # ADD: needed for auto ha_url/token injection
+auth_api: true                            # ADD: same
+# host_network: true                      # DECIDE: remove this OR remove ports: below
 uart: true
-
-ports:
-  5050/tcp: 5060        # container 5050 → host 5060 (HADashboard / admin)
-  8080/tcp: 8080        # example: alarm web UI
-  1883/tcp: 1883        # example: alarm MQTT broker
-  9000/tcp: 9000        # example: alarm sensor receiver
-  5051/tcp: 5051        # Radar port
+ports:                                    # only meaningful if host_network is removed
+  5050/tcp: 5060
+  8080/tcp: 8080
+  1883/tcp: 1883
+  9000/tcp: 9000
+  5051/tcp: 5051
 ports_description:
   5050/tcp: AppDaemon admin & HADashboard
   8080/tcp: Alarm system web UI
@@ -32,6 +33,7 @@ map:
   - share:rw
   - ssl
 options:
+  log_level: info                         # ADD: default for the schema entry
   system_packages: []
   python_packages: []
   init_commands: []
